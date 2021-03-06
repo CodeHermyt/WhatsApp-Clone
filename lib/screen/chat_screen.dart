@@ -153,13 +153,13 @@ class ChatScreen extends StatelessWidget {
               SliverPadding(
                   padding: const EdgeInsets.all(8),
                   sliver: SliverFixedExtentList(
-                    itemExtent: 48,
+                    itemExtent: 40,
                     delegate: SliverChildBuilderDelegate(
                       (BuildContext context, int index) {
                         print(listItems.length);
                         return listItems[index];
                       },
-                      childCount: listItems.length,
+                      //childCount: listItems.length,
                     ),
                   )),
             ],
