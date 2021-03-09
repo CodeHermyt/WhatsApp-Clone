@@ -54,8 +54,10 @@ class MainScreen extends StatelessWidget {
                     ),
                     PopupMenuButton(itemBuilder: (_) {
                       print("Popup menu pressed");
+                      return [];
                     }),
                   ],
+                  floating: true,
                   pinned: true,
                   forceElevated: innerBoxIsScrolled,
                   elevation: 6,

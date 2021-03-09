@@ -139,33 +139,40 @@ class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      top: false,
-      bottom: false,
-      child: Builder(
-        builder: (BuildContext context) {
-          return CustomScrollView(
-            key: PageStorageKey<String>("/chat"),
-            slivers: [
-              SliverOverlapInjector(
-                handle:
-                    NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-              ),
-              SliverPadding(
-                  padding: const EdgeInsets.all(8),
-                  sliver: SliverFixedExtentList(
-                    itemExtent: 40,
-                    delegate: SliverChildBuilderDelegate(
-                      (BuildContext context, int index) {
-                        print(listItems.length);
-                        return listItems[index];
-                      },
-                      //childCount: listItems.length,
-                    ),
-                  )),
-            ],
-          );
-        },
-      ),
-    );
+        top: false,
+        bottom: false,
+        child: Container(
+            padding: EdgeInsets.only(top: 50),
+            child: ListView.builder(
+              itemCount: listItems.length,
+              itemBuilder: (ctx, index) => listItems[index],
+            )));
   }
 }
+
+// Builder(
+//         builder: (BuildContext context) {
+//           return CustomScrollView(
+//             key: PageStorageKey<String>("/chat"),
+//             slivers: [
+//               SliverOverlapInjector(
+//                 handle:
+//                     NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+//               ),
+//               SliverPadding(
+//                   padding: const EdgeInsets.all(8),
+//                   sliver: SliverFixedExtentList(
+//                     itemExtent: 40,
+
+//                     delegate: SliverChildBuilderDelegate(
+//                       (BuildContext context, int index) {
+//                         print(listItems.length);
+//                         return listItems[index];
+//                       },
+//                       //childCount: listItems.length,
+//                     ),
+//                   )),
+//             ],
+//           );
+//         },
+//       ),
